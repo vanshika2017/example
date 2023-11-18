@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Domino Set</h1>
+    <ul id="dominoList"></ul>
+    <script>
+        const dominoSet = [];
+        for (let top = 0; top <= 6; top++) {
+            for (let bottom = 0; bottom <= top; bottom++) {
+                dominoSet.push({ top, bottom });
+
+            }
+        }
+        const dominoList = document.getElementById('dominoList');
+        dominoSet.forEach(domino => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${domino.top}-${domino.bottom}`;
+            dominoList.appendChild(listItem);
+
+        });
+
+
+    </script>
+</body>
+
+</html>
